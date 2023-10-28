@@ -1,13 +1,16 @@
 * {
     margin: 0px;
     padding: 0px;
+    background-color: rgb(153, 232, 207);
 }
 
+/* Css for Videos component */
+
 .card{
-    border: 1px solid rgb(88, 88, 88);
+    border: 1px solid rgb(161, 161, 161);
     border-radius: 20px;
     padding: 20px;
-    width: 300px;
+    width: 290px;
     margin: 20px;
 }
 
@@ -18,3 +21,24 @@
 .card span{
     color: gray;
 }
+/* ----------------------------- */
+
+/* Css for PlayButton component */
+.playButton{
+    margin-top: 10px;
+    /* width: 100px; */
+    padding: 10px;
+    height: 35px;
+    border-radius: 5px;
+    border: none;
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+.playButton:hover{
+    background-color: orange;
+    border: 1px solid rgb(255, 119, 7);
+}
+
+
+/* ----------------------------- */

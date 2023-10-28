@@ -1,7 +1,7 @@
 let videos = [
     {
         id : 1,
-        course : 'React Js Tutorils',
+        course : 'React Js Tutorials',
         channel : 'Coder Dost',
         views : '190k Views',
         created : '1 year ago',
@@ -9,7 +9,7 @@ let videos = [
     },
     {
         id : 2,
-        course : 'Node Js Tutorils',
+        course : 'Node Js Tutorials',
         channel : 'Coder Dost',
         views : '100k Views',
         created : '1 Month ago',
@@ -17,7 +17,7 @@ let videos = [
     },
     {
         id : 3,
-        course : 'MongoDB Tutorils',
+        course : 'MongoDB Tutorials',
         channel : 'Coder Dost',
         views : '1M Views',
         created : '1 year ago',
@@ -25,7 +25,7 @@ let videos = [
     },
     {
         id : 4,
-        course : 'Angular Tutorils',
+        course : 'Angular Tutorials',
         channel : 'Coder Dost',
         views : '10k Views',
         created : '5 month ago',
@@ -33,7 +33,7 @@ let videos = [
     },
     {
         id : 5,
-        course : 'Next Js Tutorils',
+        course : 'Next Js Tutorials',
         channel : 'Coder Dost',
         views : '1M Views',
         created : '8 Month ago',
