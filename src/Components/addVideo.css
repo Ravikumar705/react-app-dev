@@ -9,6 +9,7 @@
     margin: 10px;
     padding: 5px;
     border-radius: 7px;
+    background-color: white;
 }
 .form-data form input[type ='radio'],.radio-button{
     margin: 10px;

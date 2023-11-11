@@ -1,51 +1,51 @@
 import React, { useState } from 'react'
 import './addVideo.css';
 
-let newVedio = {
-    channel: 'Coder Dost',
-    created: '5 month ago',
-};
+
+let intialValues = {
+    course: '',
+    views: '',
+    isVerified: '',
+    channel : 'Coder Dost',
+    created :'5 month ago'
+}
 
 function AddVideo({ newVedioObject }) {
-    const [inputTitleVaue, setTitleInputValue] = useState('')
-    const [inputViewVaue, setInputViewValue] = useState('')
-    const [radioValue, setRadioValue] = useState('')
+    const [newVedio, setFinalValues] = useState(intialValues)
 
+    const clearFields = () => {
+        setFinalValues({ ...intialValues });
+    }
 
     function handleAddCource(e) {
         e.preventDefault()
-        if (newVedio.course === undefined || newVedio.views === undefined || newVedio.isVerified === undefined)
+        if (newVedio.course === undefined || newVedio.views === undefined || newVedio.isVerified === undefined) {
             alert('All Field must be filled');
+            console.log(newVedio.course)
+            console.log(newVedio.views)
+            console.log(newVedio.isVerified)
+        }
         else {
             newVedioObject(newVedio)
-            setTitleInputValue('')
-            setInputViewValue('')
-            setRadioValue('')
+            clearFields()
         }
     }
-    function handleTitleOnchange(e) {
-        newVedio[e.target.name] = e.target.value;
-        setTitleInputValue(e.target.value)
-    }
-    function handleViewOnchange(e) {
-        newVedio[e.target.name] = e.target.value;
-        setInputViewValue(e.target.value)
-    }
-    function handleRadioOnchange(e) {
-        newVedio[e.target.name] = e.target.value;
-        setRadioValue(e.target.value)
-    }
 
+    function handleOnchange(e) {
+        // newVedio[e.target.name] = e.target.value;
+        // setFinalValues(e.target.value)
+        setFinalValues({...newVedio,[e.target.name]: e.target.value})
+    }
 
     return (
         <div className='form-data'>
             <form>
-                <input type="text" name="course" value={inputTitleVaue} onChange={handleTitleOnchange} placeholder="Title" />
-                <input type="text" name="views" value={inputViewVaue} onChange={handleViewOnchange} placeholder="Views" />
+                <input type="text" name="course" value={newVedio.course} onChange={handleOnchange} placeholder="Title" />
+                <input type="text" name="views" value={newVedio.views} onChange={handleOnchange} placeholder="Views" />
                 <div className='radio-button'>
-                    <input type="radio" value={true} checked={radioValue === 'true'} name="isVerified" onChange={handleRadioOnchange} />
+                    <input type="radio" value={newVedio.isVerified} checked={newVedio.isVerified === 'true'} name="isVerified" onChange={handleOnchange} />
                     <label>Verified</label>
-                    <input type="radio" value={false} checked={radioValue === 'false'} name="isVerified" onChange={handleRadioOnchange} />
+                    <input type="radio" value={newVedio.isVerified} checked={newVedio.isVerified === 'false'} name="isVerified" onChange={handleOnchange} />
                     <label>Not Verified</label>
                 </div>
                 <button onClick={handleAddCource}> Add Course </button>
