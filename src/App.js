@@ -7,9 +7,9 @@ import AddVideo from "./Components/AddVideo";
 export default function App() {
   const [newVideo, setNewVideo] = useState(videos);
   let newVedioObject = (obj) => {
-    console.log(obj)
+    // console.log(obj)
     setNewVideo([...newVideo , { ...obj,id: newVideo.length+1}])
-    console.log([...newVideo , { ...obj,id: newVideo.length+1}])
+    // console.log([...newVideo , { ...obj,id: newVideo.length+1}])
   }
 
   return (

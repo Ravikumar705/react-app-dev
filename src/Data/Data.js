@@ -31,14 +31,7 @@ let videos = [
         created : '5 month ago',
         isVerified : true
     },
-    {
-        id : 5,
-        course : 'Next Js Tutorials',
-        channel : 'Coder Dost',
-        views : '1M Views',
-        created : '8 Month ago',
-        isVerified : false
-    },
+    
 ]
 
 export default videos;

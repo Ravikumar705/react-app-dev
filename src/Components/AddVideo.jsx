@@ -6,27 +6,27 @@ let intialValues = {
     course: '',
     views: '',
     isVerified: '',
-    channel : 'Coder Dost',
-    created :'5 month ago'
+    created: '1 Month ago',
+    channel: 'Coder Dost'
 }
+
 
 function AddVideo({ newVedioObject }) {
     const [newVedio, setFinalValues] = useState(intialValues)
+    // console.log(newVedio)
 
     const clearFields = () => {
-        setFinalValues({ ...intialValues });
+        setFinalValues({ ...intialValues, course:'', channel : ''});
     }
 
     function handleAddCource(e) {
         e.preventDefault()
-        if (newVedio.course === undefined || newVedio.views === undefined || newVedio.isVerified === undefined) {
+        if (newVedio.course === '' || newVedio.views === '' || newVedio.isVerified === '') {
             alert('All Field must be filled');
-            console.log(newVedio.course)
-            console.log(newVedio.views)
-            console.log(newVedio.isVerified)
         }
         else {
             newVedioObject(newVedio)
+            // console.log(newVedio)
             clearFields()
         }
     }
@@ -34,7 +34,7 @@ function AddVideo({ newVedioObject }) {
     function handleOnchange(e) {
         // newVedio[e.target.name] = e.target.value;
         // setFinalValues(e.target.value)
-        setFinalValues({...newVedio,[e.target.name]: e.target.value})
+        setFinalValues({ ...newVedio, [e.target.name]: e.target.value })
     }
 
     return (
@@ -43,9 +43,9 @@ function AddVideo({ newVedioObject }) {
                 <input type="text" name="course" value={newVedio.course} onChange={handleOnchange} placeholder="Title" />
                 <input type="text" name="views" value={newVedio.views} onChange={handleOnchange} placeholder="Views" />
                 <div className='radio-button'>
-                    <input type="radio" value={newVedio.isVerified} checked={newVedio.isVerified === 'true'} name="isVerified" onChange={handleOnchange} />
+                    <input type="radio" value={true} checked={newVedio.isVerified === 'true'} name="isVerified" onChange={handleOnchange} />
                     <label>Verified</label>
-                    <input type="radio" value={newVedio.isVerified} checked={newVedio.isVerified === 'false'} name="isVerified" onChange={handleOnchange} />
+                    <input type="radio" value={false} checked={newVedio.isVerified === 'false'} name="isVerified" onChange={handleOnchange} />
                     <label>Not Verified</label>
                 </div>
                 <button onClick={handleAddCource}> Add Course </button>
